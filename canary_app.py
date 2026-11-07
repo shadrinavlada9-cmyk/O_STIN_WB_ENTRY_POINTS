@@ -24,7 +24,9 @@ if not getattr(monitor,'identity',None):
 if st.query_params.get('canary_diagnostics')=='1' or st.query_params.get('canary_ui')!='1':
  st.set_page_config(page_title='SYNTHETIC CANARY — resource evidence')
  @st.fragment(run_every=2)
- def diagnostics():st.json(monitor.snapshot(),expanded=False)
+ def diagnostics():
+  st.json(monitor.snapshot(),expanded=False)
+  st.download_button('Download Canary measurements (JSON)',data=lambda:json.dumps(monitor.snapshot(),ensure_ascii=True,sort_keys=True).encode('utf8'),file_name='canary_measurements.json',mime='application/json',key='canary_diagnostics_download',on_click='ignore')
  diagnostics();st.stop()
 # No audit ZIP, review data, original archive, token or production feed is used.
 exec(compile((B/'app.py').read_text(encoding='utf8'),str(B/'app.py'),'exec'),{'__name__':'__main__','__file__':str(B/'app.py')})
