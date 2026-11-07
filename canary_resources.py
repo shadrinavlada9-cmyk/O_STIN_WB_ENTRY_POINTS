@@ -45,7 +45,7 @@ class Monitor:
        state=json.loads(item.read_text(encoding='utf8')).get('state','INVALID');states[state]=states.get(state,0)+1
       except (OSError,ValueError):states['INVALID']=states.get('INVALID',0)+1
    except FileNotFoundError:pass
-  return {'at_utc':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'boot':self.boot,'uptime_seconds':round(time.time()-self.started,3),'cycle':self.cycle,'worker_RSS':p.memory_info().rss,'cgroup':cgroup(),'runtime_disk_bytes':total,'temporary_files':temporary,'fixed_lock_files':locks,'jobs':states,'filesystem_available_bytes':disk.free,'filesystem_total_bytes':disk.total,'filesystem_numbers_are_NOT_app_disk_quota':True}
+  return {'at_utc':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'boot':self.boot,'identity':getattr(self,'identity',None),'uptime_seconds':round(time.time()-self.started,3),'cycle':self.cycle,'worker_RSS':p.memory_info().rss,'cgroup':cgroup(),'runtime_disk_bytes':total,'temporary_files':temporary,'fixed_lock_files':locks,'jobs':states,'filesystem_available_bytes':disk.free,'filesystem_total_bytes':disk.total,'filesystem_numbers_are_NOT_app_disk_quota':True}
  def run(self):
   while True:
    try:
@@ -55,4 +55,4 @@ class Monitor:
    except Exception as error:LOG.warning('CANARY_TELEMETRY_UNAVAILABLE %s',type(error).__name__)
    time.sleep(2)
  def snapshot(self):
-  with self.guard:return {'data':'SYNTHETIC_ONLY','boot':self.boot,'samples':list(self.samples),'actual_cloud_result':'ONLY_IF_HOSTED_ON_THE_TARGET_PLATFORM','scope_warning':'RSS, filesystem free space and unreadable cgroup values are never substitutes for measured container limits'}
+  with self.guard:return {'data':'SYNTHETIC_ONLY','boot':self.boot,'identity':getattr(self,'identity',None),'samples':list(self.samples),'actual_cloud_result':'ONLY_IF_HOSTED_ON_THE_TARGET_PLATFORM','scope_warning':'RSS, filesystem free space and unreadable cgroup values are never substitutes for measured container limits'}
