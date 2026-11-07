@@ -1,0 +1,23 @@
+{
+  "data_origin": "100_PERCENT_SYNTHETIC_GENERATOR_NO_REAL_DATA_READ",
+  "files": {
+    "entry/ENTRY_2026-W40_2d50f3b808a9cb06.zip": "2d50f3b808a9cb06a7d4489d606cfad7c5b27d17c12d237e762e44570740b2b3",
+    "entry/ENTRY_2026-W41_07235fa44a22c089.zip": "07235fa44a22c0890f06e838efc9c7ca58c89515e88d79246989605216ed0f97",
+    "entry/ENTRY_2026-W42_16a2835a1dfd899a.zip": "16a2835a1dfd899a716c9c0a69c0e871901ed660995a39f0dc5823d9b6ea78d7",
+    "entry/ENTRY_2026-W43_24876cad554e52a1.zip": "24876cad554e52a168ed88c3f5be4f2d1f61397625ffb1966fcb92d919b8d5d2",
+    "entry/index.json": "6f9067dd40b5931a08a701426ca855bbcf58174f70ba32ecdd81042c02403ae5",
+    "search/MARKET_0490e56d08ff03a0.zip": "0490e56d08ff03a0915a98f944d724a1baa3dc4b94d3e7bce50fbf6e3b60ac04",
+    "search/OSTIN_4bb217122aba9ae7.zip": "4bb217122aba9ae7c230f465acb1196764d436d6ff094b9ed02dae6107654514",
+    "search/search_index.json": "ccc5f3a97ae80cadc124884588521b3026a16ebe2c41f62365550644010a6feb"
+  },
+  "generator_sha256": "df387793d24426d2b777358c05b1be1de5503c796049bcab23423abac6f76057",
+  "no_corporate_archive_database_or_reference_opened": true,
+  "numeric_values": "numpy RNG seed 981205 and explicitly synthetic formulas",
+  "product_identifiers": "900000000000 + ordinal and SYNTHETIC-SKU/CM namespaces",
+  "row_counts": {
+    "ep": 855803,
+    "market": 152363,
+    "sq": 1294256
+  },
+  "seed": 981205
+}
