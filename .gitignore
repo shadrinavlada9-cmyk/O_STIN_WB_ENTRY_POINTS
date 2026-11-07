@@ -1,0 +1,21 @@
+# Default deny: new files must be reviewed before changing this list.
+/*
+!/.gitignore
+!/entry_points/
+/entry_points/*
+!/.streamlit/
+/.streamlit/*
+!/.streamlit/config.toml
+!/README.md
+!/app.py
+!/entry_points/__init__.py
+!/entry_points/accepted.py
+!/entry_points/analysis.py
+!/entry_points/classifier.py
+!/entry_points/dataset.py
+!/entry_points/diagnostics.py
+!/entry_points/locking.py
+!/entry_points/public_scope.py
+!/entry_points/tables.py
+!/entry_points/view.py
+!/requirements.txt
